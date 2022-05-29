@@ -340,53 +340,12 @@ li>a:hover:after {
    */
 
 
-/**
-   * navbar form & button style 
-   */
-/* 
-.navbar-actions {
-	display: flex;
-	align-items: center;
-}
 
-.navbar-form {
-	position: relative;
-	margin-right: 50px;
-}
 
-.navbar-form-search {
-	background: var(--oxford-blue);
-	width: 100%;
-	padding: 12px 20px;
-	border-radius: 15px;
-	color: var(--off-white);
-	font-size: var(--fs-sm);
-	font-weight: var(--fw-5);
-}
 
-.navbar-form-btn {
-	background: var(--oxford-blue);
-	position: absolute;
-	top: calc(50% - 10px);
-	right: 10px;
-}
 
-.navbar-form-btn ion-icon,
-.navbar-search-btn ion-icon {
-	font-size: 20px;
-	color: var(--light-azure);
-	--ionicon-stroke-width: 50px;
-}
 
-.navbar-form-btn:hover ion-icon,
-.navbar-form-search::placeholder {
-	color: var(--off-white);
-} */
 
-/**
-   * navbar-form close button & navbar search button
-   * for small device 
-   */
 
 
 

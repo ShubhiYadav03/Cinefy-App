@@ -1,6 +1,6 @@
 # CINEFY - Movie Recommendation Web App
 ## Submission for Microsoft Engage 2021 
-<img src="Read Me Images/Read Me Banner/1.png" alt="Banner" height='340' width='1000'/>
+<img src="static\cinefy.png" alt="Banner" height='340' width='1000'/>
 
 ## Table of contents
 - [Technology Stack](#technology-stack)
@@ -45,63 +45,70 @@
 ### Sign Up
 
 Register to the application via email and password.
-<img src="Images/Login-Screen.png" alt="login screen" width="700"/>
+<img src="static\Login_v5\images\Signup.JPG" alt="Sign up screen" width="700"/>
 
 ### Sign In
 
 After signing up in, users can now log in using their registered email and password.
 
-<img src="Images/Blank-Chat-Window.png" alt="blank chat window" width="700"/>
+<img src="static\Login_v5\images\Login.JPG" alt="Sign in screen" width="700"/>
 
 ### Home
 
 The Home window appers where the users can search for their favourite shows, views movies and TV shows sorted according to their genres.
 
-<img src="Images/New-Chat.png" alt="new chat" width="700"/>
+<img src="static\Login_v5\images\Home.JPG" alt="home" width="700"/>
 
 ### Search
 
 Users can search any movie easily using the search bar with an autocomplete feature and get all the information like genres, release date, overview, etc. about that movie.
 
-<img src="Images/Video-Call-Welcome-Screen.png" alt="video call welcome screen" width="700"/>
+<img src="static\Login_v5\images\Search.JPG" alt="search" width="700"/>
 
 <img src="Images/Placing-Call.png" alt="placing call" width="700"/>
 
-### Movie - Info
+### Movie Information
 
 After searching a movies the page is rendered to view all the information about that movie like genres, release date, overview cast etc.
 
-<img src="Images/Video-Call-Welcome-Screen.png" alt="video call welcome screen" width="700"/>
+<img src="static\Login_v5\images\MovieSearch.JPG" alt="movie info page" width="700"/>
 
 ### Cast Details
 
 Users can get information about the any cast member by clicking on their respective card.
 
-<img src="Images/Video-Call-Welcome-Screen.png" alt="video call welcome screen" width="700"/>
+<img src="static\Login_v5\images\cast.JPG" alt="cast details" width="700"/>
+<img src="static\Login_v5\images\cast-info.JPG" alt="cast info" width="700"/>
 
 ### Sentiment Analysis
 
 Users can also find the sentiment anlysis of movie the reviews given by the people who've already watched the movie.
 
-<img src="Images/Video-Call-Welcome-Screen.png" alt="video call welcome screen" width="700"/>
+<img src="static\Login_v5\images\Sentiment.JPG" alt="sentiment analysis" width="700"/>
 
 ### Recommendations
 
 Users are also recommended movies of similar kind as their search using content-based filtering.
 
-<img src="Images/Video-Call-Welcome-Screen.png" alt="video call welcome screen" width="700"/>
+<img src="static\Login_v5\images\Recommendations.JPG" alt="recommendations" width="700"/>
 
 ### Genre-based sorting
 
 The movies are displayed in various catalogues based on their different genres.
 
-<img src="Images/Video-Call-Welcome-Screen.png" alt="video call welcome screen" width="700"/>
+<img src="static\Login_v5\images\Genres.JPG" alt="genres" width="700"/>
 
-### Trending
+### Trending Movies
 
 Users can also find the most-trending movies on the home page.
 
-<img src="Images/Video-Call-Welcome-Screen.png" alt="video call welcome screen" width="700"/>
+<img src="static\Login_v5\images\Trending.JPG" alt="trending" width="700"/>
+
+### Logout
+
+Finally users can logout using the logout button in the navbar.
+
+<img src="static\Login_v5\images\logout.JPG" alt="logout" width="700"/>
 
 <br/>[(Back to top)](#table-of-contents)
 

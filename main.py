@@ -59,17 +59,10 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/home" , methods = ['GET', 'POST'])
 def home():
-    # if(request.method =='POST'):
-    #     logemail=request.form.get('logemail')
-    #     return redirect(url_for('land', logemail=logemail))
     return render_template('index1.html')
 
 
-@app.route('/validate', methods = ["POST"])  
-def validate():  
-    if request.method == 'POST' :  
-        logemail=request.form.get('logemail')
-        return redirect(url_for('land',logemail=logemail))  
+
 
 @app.route("/similarity",methods=["POST"])
 def similarity():
@@ -84,8 +77,7 @@ def similarity():
 @app.route("/land",methods=['POST', 'GET'])                                                             # edit
 def land():
     suggestions = get_suggestions()
-    logemail=request.args.get('logemail',None)
-    return render_template('home.html', suggestions=suggestions,logemail=logemail)
+    return render_template('home.html', suggestions=suggestions)
 
 @app.route("/recommend",methods=["POST"])
 def recommend():

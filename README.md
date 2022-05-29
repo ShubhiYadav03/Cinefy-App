@@ -1,6 +1,6 @@
 # CINEFY - Movie Recommendation Web App
 ## Submission for Microsoft Engage 2021 
-<img src="static\cinefy.png" alt="Banner" height='340' width='1000'/>
+<img src="static\cinefy.png" alt="Banner" width="900"/>
 
 ## Table of contents
 - [Technology Stack](#technology-stack)
@@ -9,6 +9,7 @@
 - [Installation](#installation)
 - [Recommendations System](#recommendations-system) 
 - [Useful Links](#useful-links)
+- [Resources](#resources)
 - [Support and Contact](#support-and-contact)
 
 ## Technology Stack
@@ -64,8 +65,6 @@ The Home window appers where the users can search for their favourite shows, vie
 Users can search any movie easily using the search bar with an autocomplete feature and get all the information like genres, release date, overview, etc. about that movie.
 
 <img src="static\Login_v5\images\Search.JPG" alt="search" width="700"/>
-
-<img src="Images/Placing-Call.png" alt="placing call" width="700"/>
 
 ### Movie Information
 
@@ -188,6 +187,10 @@ More about Cosine Similarity : [Understanding the Math behind Cosine Similarity]
 - [Sprint Document](https://www.canva.com/design/DAFB-H8KJUg/ewr48ojlpZUaZg7rDi1EiA/view?utm_content=DAFB-H8KJUg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 <br/>[(Back to top)](#table-of-contents)
+
+## Resources
+
+- 
 
 ## Support and Contact
 

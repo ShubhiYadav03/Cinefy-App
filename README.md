@@ -138,7 +138,11 @@ Get your API key from https://www.themoviedb.org/
 -You will see the API key in your API sidebar once your request is approved.
 
 #### 4. Add the API key
-Replace the value of `my_api_key` with your API key in (line no. 15 and 31) of static/recommend.js file and (line no. 8) of static/recommend.js and hit save.
+Replace the value of `my_api_key` with your API key in (line no. 15 and 31) of static/recommend.js file and (line no. 8) of static/api.js and hit save.
+
+#### Download Dataset
+
+In order to run the preprocessing files download `movies_metadata.csv` and `credits.csv` from [Kaggle](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset).
 
 #### 5. Start the Server
 Open your terminal/command prompt from your project directory and run the file `main.py` by executing the command-
@@ -199,7 +203,7 @@ More about Cosine Similarity : [Understanding the Math behind Cosine Similarity]
 
 ## Support and Contact
 
-Feel free to contact me on shubhiy216@gmail.com
+Feel free to contact me on shubhi.yadav.1234@gmail.com
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-lightgrey)](https://www.linkedin.com/in/shubhi-yadav-a155121b9/) [![Twitter](https://img.shields.io/badge/Twitter-follow-blue.svg?logo=twitter)](https://twitter.com/crosXHead) 
 <br/>[(Back to top)](#table-of-contents)

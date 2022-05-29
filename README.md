@@ -1,6 +1,6 @@
 # CINEFY - Movie Recommendation Web App
 ## Submission for Microsoft Engage 2021 
-<img src="static\cinefy.png" alt="Banner" width="900"/>
+<img src="static\cinefy.png" alt="Banner" width="800"/>
 
 ## Table of contents
 - [Technology Stack](#technology-stack)

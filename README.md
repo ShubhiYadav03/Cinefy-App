@@ -1,6 +1,8 @@
 # CINEFY - Movie Recommendation Web App
-## Submission for Microsoft Engage 2021 
-<img src="static\cinefy.png" alt="Banner" width="800"/>
+## Microsoft Engage 2022
+<p align="center">
+<img src="static\cinefy.png" alt="Banner" width="800"  />
+      </p>
 
 ## Table of contents
 - [Technology Stack](#technology-stack)
@@ -46,6 +48,7 @@
 ### Sign Up
 
 Register to the application via email and password.
+
 <img src="static\Login_v5\images\Signup.JPG" alt="Sign up screen" width="700"/>
 
 ### Sign In
@@ -119,7 +122,7 @@ Initialise git on your terminal.
 
 ```bash
 git init
-git clone https://github.com/Gaurisha21/Microsoft-Teams-Clone-Engage2021.git
+git clone https://github.com/ShubhiYadav03/Cinefy-App.git
 ```
 
 #### 2. Install all the libraries mentioned in the requirements.txt file with the command-
@@ -189,8 +192,10 @@ More about Cosine Similarity : [Understanding the Math behind Cosine Similarity]
 <br/>[(Back to top)](#table-of-contents)
 
 ## Resources
-
-- 
+- [Recommendation System](https://www.youtube.com/watch?v=1xtrIEwY_zY)
+- [TMDB API](https://www.themoviedb.org/documentation/api)
+- [Getting started with Firebase Authentication](https://firebase.google.com/docs/auth/web/start)
+- [Web Development using Flask](https://www.geeksforgeeks.org/python-introduction-to-web-development-using-flask/)
 
 ## Support and Contact
 

@@ -190,7 +190,7 @@ More about Cosine Similarity : [Understanding the Math behind Cosine Similarity]
 
 ## Useful Links
 
-- [Demo Video](https://youtu.be/OKKK1GOnlIU)
+- [Demo Video](https://www.canva.com/design/DAFCFBaMt5E/CFMUiBVbeacg5KLAuHbpgg/watch?utm_content=DAFCFBaMt5E&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 - [Sprint Document](https://www.canva.com/design/DAFB-H8KJUg/ewr48ojlpZUaZg7rDi1EiA/view?utm_content=DAFB-H8KJUg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 <br/>[(Back to top)](#table-of-contents)

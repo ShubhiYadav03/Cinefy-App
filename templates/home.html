@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cinefy-Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Auto Complete -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+  <script type="text/javascript">
+    var films = {{ suggestions| tojson}};
+  </script>
+
+</head>
+
+<body id="content">
+  <style>
+    /*-------------------------------------*\
+      #FOOTER SECTION
+    \*-------------------------------------*/
+
+    footer {
+      background: none;
+      padding: 80px 120px 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      /* border-bottom: 1px solid var(--oxford-blue-50); */
+      padding-bottom: 80px;
+    }
+
+    .footer-brand {
+      max-width: 250px;
+      margin-right: 130px;
+    }
+
+    .footer-logo {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+
+    .slogan {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+
+    .social-link a {
+      display: inline-block;
+      color: #857f7f;
+      ;
+
+    }
+
+    .social-link ion-icon {
+      font-size: 25px;
+      margin-right: 20px;
+      color: #857f7f;
+      ;
+    }
+
+    .social-link ion-icon:hover {
+
+      color: #ffffff;
+      ;
+    }
+
+    .footer-links {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      align-items: flex-end;
+      color: #857f7f;
+      ;
+    }
+
+    .link-heading {
+      margin-bottom: 20px;
+    }
+
+    .link-item a {
+      font-size: 14px;
+      color: #857f7f;
+      ;
+      text-decoration: none;
+    }
+
+    /* .link-item {
+      font-size: 14px;
+      color: #f9f9f9;
+    } */
+
+    ul .link-item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .link-item:hover a {
+      color: rgb(255, 255, 255);
+    }
+
+    .footer-copyright {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 40px;
+    }
+
+    .footer-copyright p,
+    .wrapper a {
+      font-size: 14px;
+      color: #857f7f;
+      ;
+      text-decoration: none;
+    }
+
+    .wrapper a:hover {
+      color: rgb(255, 255, 255);
+    }
+
+    .wrapper {
+      display: flex;
+    }
+
+    .wrapper a:not(:last-child) {
+      margin-right: 30px;
+    }
+  </style>
+
+
+
+  var url = window.location.href;
+  console.log(url);
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand py-0 mx-3" href="#"><img src="static/cinefy.png" classs="img-responsive" width="100px"
+          alt=" Cinefy"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#trending1">Trending</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#action1">Action</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#romance1">Romance</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#horror1">Horror</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#sci-fi1">Sci-Fi</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="logout">LogOut</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+  <h4 style="color: #ffffff; padding: 50px; text-align: center;" class="pb-0">
+    Welcome {{ logemail }}!
+  </h4>
+
+
+
+
+
+
+  <div id="carouselExampleDark" class="mt-4 carousel slide carousel-container mx-auto " data-bs-ride="carousel ">
+    <div class="carousel carousel-inner mx-auto">
+      <div class="slider carousel-item active" data-bs-interval="10000">
+        <div class="slide-content">
+          <h1 class="movie-title mt-xl-4 mt-lg-2 mt-md-1 ">Loki</h1>
+          <div class="movie-info" style="margin-left: 50px; color: #857f7f;">
+            <p>1 Season ▫6 Episodes ▫Superhero ▫U/A</p>
+            <p>13+ ▫Marvel</p>
+          </div>
+          <p class="movie-des">The mercurial villian Loki resumes his role as the God of Mischief in a new
+            series that takes place after the events of "Avengers: Endgame"...</p>
+
+
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+              <a class="btn btn-outline-light ml-1 mr-1" href="https://www.youtube.com/watch?v=nW948Va-l10"
+                target="_blank" rel="noopener noreferrer">Watch Trailer</a>
+              <a class="btn btn-outline-light">Add to list</a>
+            </div>
+          </div>
+
+
+        </div>
+        <img src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/slider%201.PNG" alt="">
+      </div>
+
+      <div class="slider carousel-item " data-bs-interval="20000">
+        <div class="slide-content ">
+          <h1 class="movie-title">Falcon</h1>
+          <div class="movie-info" style="margin-left: 50px; color: #857f7f;">
+            <p>1 Season ▫6 Episodes ▫Superhero ▫U/A</p>
+            <p>13+ ▫Marvel</p>
+          </div>
+          <p class="movie-des">Following the events of “Avengers: Endgame”, Sam Wilson and Bucky Barnes team
+            up in a global adventure that tests their abilities, and their patience...</p>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-6">
+              <a class="btn btn-outline-light ml-1 mr-1" href="https://www.youtube.com/watch?v=IWBsDaFWyTE"
+                target="_blank" rel="noopener noreferrer">Watch Trailer</a>
+              <a class="btn btn-outline-light">Add to list</a>
+            </div>
+          </div>
+
+        </div>
+        <img src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/slider%202.PNG" alt="">
+      </div>
+      <div class="slider carousel-item " data-bs-interval="30000">
+        <div class="slide-content">
+          <h1 class="movie-title">Wanda Vision</h1>
+          <div class="movie-info" style="margin-left: 50px; color: #857f7f;">
+            <p>1 Season ▫9 Episodes ▫Superhero ▫U/A</p>
+            <p>13+ ▫Marvel</p>
+          </div>
+          <p class="movie-des">Wanda Maximoff and Vision-two super-powered beings living idealized suburban
+            lives-begin to suspect that everything is not as it seems...</p>
+
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-6">
+              <a class="btn btn-outline-light ml-1 mr-1" href="https://www.youtube.com/watch?v=sj9J2ecsSpo"
+                target="_blank" rel="noopener noreferrer">Watch Trailer</a>
+              <a class="btn btn-outline-light">Add to list</a>
+            </div>
+          </div>
+
+
+
+        </div>
+        <img src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/slider%203.PNG" alt="">
+      </div>
+    </div>
+
+
+    <a class="carousel-control-prev " type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-dark rounded-circle " aria-hidden="true"></span>
+    </a>
+  </div>
+
+
+  <div class="container mb-4" style="background-image: url('static/image_original.jpg');">
+    <div class="form-group shadow-textarea "
+      style=" margin-top: 30px; padding-top: 80px; text-align: center;color: white;">
+      <label for="autocomplete">
+        <h3>Can't Find Anything You Like?</h3>
+        <h6> Search for thousands of unique movies from our growing database...</h6>
+      </label>
+      <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off"
+        placeholder="Enter the Movie Name"
+        style="background-color: #ffffff;border-color:#ffffff;width: 30%;color: #181818" required="required" />
+      <br>
+    </div>
+
+    <div class="form-group" style="text-align: center;">
+      <button class="btn btn-outline-danger btn-block movie-button" style="text-align: center;width:120px;"
+        disabled="true">Enter</button><br><br>
+    </div>
+
+  </div>
+  <!-- <ul class="navbar-nav">
+    <li> <a href="#" class="navbar-link">Home</a> </li>
+    <li> <a href="#category" class="navbar-link">Category</a> </li>
+    <li> <a href="#live" class="navbar-link  indicator">LIVE</a> </li>
+  </ul>
+  </nav> -->
+
+  <!--
+  - search and sign-in
+-->
+
+  <!-- <div class="navbar-actions">
+    <form action="#" class="navbar-form">
+      <input type="text" name="search" placeholder="I'm looking for..." class="navbar-form-search">
+      <button class="navbar-form-btn">
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+      <button class="navbar-form-close">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </button>
+    </form> -->
+
+
+  <!--
+    - search button for small screen
+  -->
+
+  <!-- <button class="navbar-search-btn">
+      <ion-icon name="search-outline"></ion-icon>
+    </button>
+    <a href="#" class="navbar-signin">
+      <span>Sign in</span>
+      <ion-icon name="log-in-outline"></ion-icon>
+    </a>
+  </div>
+  </div>
+  </header> -->
+
+  <div class="ml-container" style="display: block;">
+  </div>
+
+  <div id="loader" class="text-center">
+  </div>
+
+  <div class="fail">
+    <center>
+      <h3>Sorry! The movie you requested is not in our database.
+        Please check the spelling or try with other movies!</h3>
+    </center>
+  </div>
+
+  <div class="results">
+    <center>
+      <h2 id="name" class="text-uppercase"></h2>
+    </center>
+  </div>
+
+
+  <div id="remove">
+
+    <h1 class="title" id="trending1">Trending</h1>
+    <div class="movies-list ">
+      <button id="pre-btn" class="pre-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/pre.png" alt=""></button>
+      <button id="nxt-btn" class="nxt-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/nxt.png" alt=""></button>
+      <div class="card-container" id="trending">
+      </div>
+    </div>
+
+    <h1 class="title" id="action1">Action</h1>
+    <div class="movies-list">
+      <button id="pre-btn" class="pre-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/pre.png" alt=""></button>
+      <button id="nxt-btn" class="nxt-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/nxt.png" alt=""></button>
+      <div class="card-container" id="action">
+      </div>
+    </div>
+
+
+    <h1 class="title" id="romance1">Romance</h1>
+    <div class="movies-list ">
+      <button id="pre-btn" class="pre-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/pre.png" alt=""></button>
+      <button id="nxt-btn" class="nxt-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/nxt.png" alt=""></button>
+      <div class="card-container" id="romance">
+      </div>
+    </div>
+
+
+    <h1 class="title" id="horror1">Horror</h1>
+    <div class="movies-list">
+      <button id="pre-btn" class="pre-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/pre.png" alt=""></button>
+      <button id="nxt-btn" class="nxt-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/nxt.png" alt=""></button>
+      <div class="card-container" id="horror">
+      </div>
+    </div>
+
+
+    <h1 class="title" id="sci-fi1">Sci-Fi</h1>
+    <div class="movies-list">
+      <button id="pre-btn" class="pre-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/pre.png" alt=""></button>
+      <button id="nxt-btn" class="nxt-btn"><img
+          src="https://raw.githubusercontent.com/kunaal438/disney-plus-clone/master/images/nxt.png" alt=""></button>
+      <div class="card-container" id="sci-fi">
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class=" text-light">
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+        <img src="static/cinefy.png" alt="" class="footer-logo">
+        <p class="slogan">Movies & TV Shows, Online cinema</p>
+
+
+        <div class="social-link">
+
+          <a href="https://github.com/ShubhiYadav03">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+          <a href="https://twitter.com/crosXHead">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/shubhi-yadav-a155121b9">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+
+          <a href="https://www.youtube.com/channel/UCDAC6JdfOjyWaw8EduX7VHA">
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+
+        </div>
+      </div>
+
+
+      <div class="footer-links">
+        <ul style="list-style-type:none;">
+
+          <h4 class="link-heading">Cinefy</h4>
+
+          <li class="link-item"><a href="#">About us</a></li>
+          <li class="link-item"><a href="#">My profile</a></li>
+          <li class="link-item"><a href="#">Pricing plans</a></li>
+          <li class="link-item"><a href="#">Contacts</a></li>
+
+        </ul>
+
+        <ul style="list-style-type:none;">
+
+          <h4 class="link-heading">Browse</h4>
+
+          <li class="link-item"><a href="#">Live Tv</a></li>
+          <li class="link-item"><a href="#">Live News</a></li>
+          <li class="link-item"><a href="#">Live Sports</a></li>
+          <li class="link-item"><a href="#">Streaming Library</a></li>
+
+        </ul>
+
+        <ul style="list-style-type:none;">
+
+          <li class="link-item"><a href="#">TV Shows</a></li>
+          <li class="link-item"><a href="#">Movies</a></li>
+          <li class="link-item"><a href="#">Kids</a></li>
+          <li class="link-item"><a href="#">Collections</a></li>
+
+        </ul>
+
+        <ul style="list-style-type:none;">
+
+          <h4 class="link-heading">Help</h4>
+
+          <li class="link-item"><a href="#">Account & Billing</a></li>
+          <li class="link-item"><a href="#">Plans & Pricing</a></li>
+          <li class="link-item"><a href="#">Supported devices</a></li>
+          <li class="link-item"><a href="#">Accessibility</a></li>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-copyright">
+
+      <div class="copyright">
+        <p>Shubhi Yadav&copy; copyright 2022 CINEFY</p>
+      </div>
+
+      <div class="wrapper">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+  <script>
+
+
+
+
+    let cardContainers = [...document.querySelectorAll('.card-container')];
+    let preBtns = [...document.querySelectorAll('.pre-btn')];
+    let nxtBtns = [...document.querySelectorAll('.nxt-btn')];
+
+
+    cardContainers.forEach((item, i) => {
+      let containerDimensions = item.getBoundingClientRect();
+      let containerWidth = containerDimensions.width;
+
+      nxtBtns[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth - 200;
+      })
+
+      preBtns[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth + 200;
+      })
+    })
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAzzh6xguG6eaRABCkNIARO_tbD_7Mw6ko",
+      authDomain: "auth-60ba0.firebaseapp.com",
+      projectId: "auth-60ba0",
+      storageBucket: "auth-60ba0.appspot.com",
+      messagingSenderId: "182509176551",
+      appId: "1:182509176551:web:124bd79f71f85b72cfc442"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    logout.addEventListener('click', (e) => {				//logout
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        alert('Logged out successfully');
+        window.location = 'home';
+
+      }).catch((error) => {
+        // An error happened.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+      });
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='api.js')}}"></script>
+
+
+
+</body>
+
+</html>

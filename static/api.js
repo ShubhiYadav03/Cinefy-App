@@ -5,7 +5,7 @@ $(function () {
     const romance = document.getElementById('romance');
     const scifi = document.getElementById('sci-fi');
     const horror = document.getElementById('horror');
-    const my_api_key = 'fb0e1d8056000a792931a90b40a3515d';
+    const my_api_key = '9cdb41d80e2cef9c293684f26fcdf780';
     genres = {
         Action: 28,
         Adventure: 12,
